@@ -1,0 +1,159 @@
+:root {
+  --primary-color: #0c120c;
+  --secondary-color: #c7d6d5;
+}
+body {
+  background: var(--primary-color);
+  font-family: 'Open Sans Condensed', sans-serif;
+  width: 60%;
+  margin: 0 auto;
+  color: var(--secondary-color);
+}
+
+.svg-wrapper, .search-wrapper {
+  margin: 20px auto;
+  width: 40%;
+  display: flex;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.search-wrapper {
+  flex-direction: column;
+}
+
+path {
+  stroke: #c7d6d5;
+  fill: #c7d6d5;
+  stroke-dasharray: 200;
+  opacity: 1;
+  animation: path-text 3s cubic-bezier(0,0.23,1,.1);
+}
+
+.search-wrapper a {
+  transition: background 0.5s;
+}
+
+.search-wrapper a:visited {
+  color: var(--secondary-color);
+}
+
+.search-wrapper a:hover {
+  color: var(--primary-color);
+  background: var(--secondary-color);
+}
+
+.results {
+  color: var(--secondary-color);
+  text-align: center;
+  margin-top: 20px;
+  
+  font-size: 2em;
+}
+
+.searchmatch {
+  color: #ffd700;
+}
+
+.results > div {
+  transition: transform 0.5s;
+}
+
+.results > div:visited {
+  transition: transform 0.5s;
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.results > div:hover {
+  transform: scale(1.2);
+}
+
+.result-links {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+h2 {
+  font-size: 1rem;
+  color: red;
+  margin: 100px auto;
+  text-align: center;
+  animation: error-message 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.search-wrapper > * {
+  border: 2px solid var(--secondary-color);
+  text-align: center;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+
+input {
+  background: none;
+  color: var(--secondary-color);
+}
+
+input::placeholder {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+
+
+@keyframes path-text {
+  0% {
+    opacity: 0;
+    fill: none;
+    stroke-dashoffset: 200;
+  }
+  30% {
+    opacity: 0.5;
+    fill: none;
+    stroke-dashoffset: 200;
+  }
+  90% {
+    fill: rgba(194,214,213,0);
+  }
+  100% {
+    opacity: 10;
+    fill: rgba(194,214,213,1);
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes error-message {
+  0% {
+    opacity: 0;
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(2);
+  }
+  75% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  100% { 
+    opacity: 1;
+    transform: scale(2);
+  }
+}
+
+@media (max-width: 568px) {
+  .svg-wrapper, .search-wrapper {
+    margin: 20px auto;
+    width: 80%;
+    display: flex;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    text-align: center;
+  }
+}
